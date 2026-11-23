@@ -66,7 +66,9 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.fe.templates": {}
+        "sap.fe.templates": {},
+        "sap.f": {},
+        "sap.ui.layout": {}
       }
     },
     "contentDensities": {
@@ -167,6 +169,20 @@
                 "_Task": {
                   "detail": {
                     "route": "TasksObjectPage"
+                  }
+                }
+              },
+              "content": {
+                "body": {
+                  "sections": {
+                    "ImagePreview": {
+                      "template": "sapui5.maintenanceplanner.ext.fragment.ImagePreview",
+                      "title": "{i18n>imagePreviewSectionTitle}",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "Attachments"
+                      }
+                    }
                   }
                 }
               }
