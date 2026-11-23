@@ -1,0 +1,31 @@
+{
+  "enableAllProjectMcpServers": true,
+  "permissions": {
+    "allow": [
+      "mcp__ui5__*",
+      "mcp__playwright__*",
+      "mcp__playwright",
+      "mcp__ui5",
+      "Bash(npm run ts-typecheck)",
+      "Bash(npm run ts-typecheck *)",
+      "Bash(npm run lint)",
+      "Bash(npm run lint *)",
+      "Bash(npx @ui5/linter)",
+      "Bash(npx @ui5/linter *)",
+      "Bash(npx fiori run *)",
+      "Bash(git diff *)",
+      "Bash(git status *)",
+      "Bash(npx fiori run --port *)",
+      "Bash(sleep *)",
+      "Bash(curl -s -o /dev/null -w * http://localhost:*)",
+      "Bash(lsof -ti *)",
+      "Bash(kill *)"
+    ],
+    "deny": [
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(npm install *)"
+    ]
+  }
+}
