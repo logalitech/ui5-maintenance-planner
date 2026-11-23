@@ -67,6 +67,14 @@
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="AssignedTo"/>
                         </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Action" String="SAP__self.assign"/>
+                            <PropertyValue Property="Label" String="{@i18n&gt;actionAssign}"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Action" String="SAP__self.reject"/>
+                            <PropertyValue Property="Label" String="{@i18n&gt;actionReject}"/>
+                        </Record>
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.PresentationVariant">
@@ -109,6 +117,46 @@
                         <Record Type="UI.ReferenceFacet">
                             <PropertyValue Property="ID" String="HeaderPriority"/>
                             <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Priority"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Action" String="SAP__self.assign"/>
+                            <PropertyValue Property="Label" String="{@i18n&gt;actionAssign}"/>
+                            <Annotation Term="UI.Hidden">
+                                <Not>
+                                    <Path>IsActiveEntity</Path>
+                                </Not>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Action" String="SAP__self.startWork"/>
+                            <PropertyValue Property="Label" String="{@i18n&gt;actionStartWork}"/>
+                            <Annotation Term="UI.Hidden">
+                                <Not>
+                                    <Path>IsActiveEntity</Path>
+                                </Not>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Action" String="SAP__self.complete"/>
+                            <PropertyValue Property="Label" String="{@i18n&gt;actionComplete}"/>
+                            <Annotation Term="UI.Hidden">
+                                <Not>
+                                    <Path>IsActiveEntity</Path>
+                                </Not>
+                            </Annotation>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Action" String="SAP__self.reject"/>
+                            <PropertyValue Property="Label" String="{@i18n&gt;actionReject}"/>
+                            <Annotation Term="UI.Hidden">
+                                <Not>
+                                    <Path>IsActiveEntity</Path>
+                                </Not>
+                            </Annotation>
                         </Record>
                     </Collection>
                 </Annotation>
@@ -206,6 +254,9 @@
                         </Record>
                     </Collection>
                 </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.startWork(SAP__self.RequestsType)">
+                <Annotation Term="Common.IsActionCritical" Bool="true"/>
             </Annotations>
             <Annotations Target="SAP__self.RequestsType/Status">
                 <Annotation Term="Common.Text" Path="StatusText">
