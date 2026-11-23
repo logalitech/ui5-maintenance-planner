@@ -1,0 +1,18 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:macros="sap.fe.macros"
+	controllerName="sapui5.maintenanceplanner.ext.view.Indicators"
+>
+	<macros:Page title="{i18n>indicatorsPageTitle}">
+		<macros:Table
+			id="IndicatorsTable"
+			contextPath="/RequestStats"
+			metaPath="@com.sap.vocabularies.UI.v1.LineItem"
+			headerVisible="false"
+			personalization="Sort,Column,Filter"
+			selectionMode="None"
+			readOnly="true"
+			type="ResponsiveTable"
+		/>
+	</macros:Page>
+</mvc:View>

@@ -67,6 +67,8 @@
         "sap.m": {},
         "sap.ui.core": {},
         "sap.fe.templates": {},
+        "sap.fe.core": {},
+        "sap.fe.macros": {},
         "sap.f": {},
         "sap.ui.layout": {}
       }
@@ -128,6 +130,11 @@
           "pattern": "Requests({key})/_Task({key2}):?query:",
           "name": "TasksObjectPage",
           "target": "TasksObjectPage"
+        },
+        {
+          "pattern": "Indicators:?query:",
+          "name": "Indicators",
+          "target": "Indicators"
         }
       ],
       "targets": {
@@ -149,6 +156,13 @@
               },
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "actions": {
+                    "Indicators": {
+                      "press": "sapui5.maintenanceplanner.ext.action.Indicators.onOpenIndicators",
+                      "text": "{i18n>indicatorsAction}",
+                      "requiresSelection": false
+                    }
+                  },
                   "tableSettings": {
                     "type": "ResponsiveTable"
                   }
@@ -197,6 +211,17 @@
             "settings": {
               "editableHeaderContent": false,
               "contextPath": "/Requests/_Task"
+            }
+          }
+        },
+        "Indicators": {
+          "type": "Component",
+          "id": "Indicators",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "viewName": "sapui5.maintenanceplanner.ext.view.Indicators",
+              "contextPath": "/RequestStats"
             }
           }
         }
